@@ -1,0 +1,293 @@
+%-------------------------------------
+% LaTeX Resume for Software Engineers
+% Author : Leslie Cheng
+% License : MIT
+%-------------------------------------
+
+\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+
+\usepackage[empty]{fullpage}
+\usepackage{enumitem}
+\usepackage{ifxetex}
+
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+%-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+% Header settings
+\def \fullname {Matias Borghi}
+\def \subtitle {}
+
+\def \linkedinicon {\faLinkedin}
+\def \linkedinlink {https://www.linkedin.com/in/borghimatias/}
+\def \linkedintext {/borghimatias}
+
+\def \phoneicon {\faPhone}
+\def \phonetext {+54 9 11 2157 6504}
+
+\def \emailicon {\faEnvelope}
+\def \emaillink {mailto:borghi.matias@gmail.com}
+\def \emailtext {borghi.matias@gmail.com}
+
+\def \githubicon {\faGithub}
+\def \githublink {https://github.com/mattborghi}
+\def \githubtext {/mattborghi}
+
+\def \websiteicon {\faGlobe}
+\def \websitelink {https://mattborghi.github.io/}
+\def \websitetext {mattborghi.github.io}
+
+\def \headertype {\doublecol} % \singlecol or \doublecol
+
+% Misc settings
+\def \entryspacing {-0pt}
+
+\def \bulletstyle {\faAngleRight}
+
+% Define colours
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{0D47A1}
+\definecolor{accent}{HTML}{263238}
+\definecolor{links}{HTML}{1565C0}
+
+%------------------------------------------------------------------------------------------------------------------- 
+
+% Defines to make listing easier
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
+% Define the link colours
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+}
+\urlstyle{same}
+
+% Set the margin alignment 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+
+% Sections
+\renewcommand{\section}[2]{\vspace{5pt}
+  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+}
+
+% Entry start and end, for spacing
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
+\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Itemized list for the bullet points under an entry, if necessary
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% Resume item
+\renewcommand{\labelitemii}{\bulletstyle}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Entry with title, subheading, date(s), and location
+\newcommand{\resumeEntryTSDL}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+      \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry with title and date(s)
+\newcommand{\resumeEntryTD}[2]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry for special (skills)
+\newcommand{\resumeEntryS}[2]{
+  \item[]\small{
+    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+  }
+}
+
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+        {\small#4} & {\small#1} \\
+        {\small#5} & {\small#2} \\
+        {\small#6} & {\small#3}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+% Single column header
+\newcommand{\singlecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[b]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l}
+        {\small#1} \\
+        {\small#2} \\
+        {\small#3} \\
+        {\small#4} \\
+        {\small#5} \\
+        {\small#6}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+\begin{document}
+%-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%---------------------------------------------------- HEADER ----------------------------------------------------
+
+\headertype{\linkedin}{\github}{\email}{\website}{\phone}{} % Set the order of items here
+\vspace{-10pt} % Set a negative value to push the body up, and the opposite
+
+%-------------------------------------------------- EDUCATION --------------------------------------------------
+\section{\faGraduationCap}{Education}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {National University of La Plata (UNLP) \href{https://unlp.edu.ar/}{\faGlobe}}{2010 -- 2017}
+      {MSc. Science in Physics}{La Plata, Buenos Aires, AR}
+    %   \resumeItemListStart
+    %     \resumeItem {School of Exact and Natural Sciences.}
+    %   \resumeItemListEnd
+  \resumeEntryEnd
+
+%-------------------------------------------------- EXPERIENCE --------------------------------------------------
+\section{\faPieChart}{Experience}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {CRISIL an {\color{red}S\&P Global} Company \href{https://www.crisil.com/}{\faGlobe}}{Mar. 2017 -- Present}
+      {Sr. Quantitative Analyst}{Buenos Aires, AR}
+    \resumeItemListStart
+      \resumeItem {Working in a research and development team for pricing and risk management Equity and Hybrid Exotic financial derivatives using Monte Carlo simulations.}
+      \resumeItem {Responsible for creating a rapidly working prototype by designing the front-end interface using \href{https://reactjs.org/}{React.js} and communicating via \href{https://graphql.org/}{GraphQL} APIs.}
+      \resumeItem {\textbf{Technologies used}: \href{https://www.python.org/}{Python} in the beginning but code was migrated to \href{https://julialang.org/}{Julia Lang}.}
+     \resumeItemListEnd
+  \resumeEntryEnd
+  
+  \resumeEntryStart
+  \resumeEntryTSDL
+      {}{Aug. 2017 -- Feb. 2019}
+      {Quantitative Analyst}{Buenos Aires, AR}
+    \resumeItemListStart
+      \resumeItem {Pricing and Risk Management Equity and Hybrid (IR/FX/COMM) exotic financial derivative models for a Tier-1 US Investment Bank.}
+      \resumeItem {Responsible for creating technical documentation and generating executive summary reports in \LaTeX. Creation and execution of Benchmark, Limiting Cases and Stability tests, among others.}
+      \resumeItem {\textbf{Technologies used}: Mainly working with Excel and C$\sharp$.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {National University of La Plata (UNLP) \href{https://unlp.edu.ar/}{\faGlobe} }{Sep. 2015 -- Sep. 2017}
+      {Teaching Assistant}{Buenos Aires, AR}
+    \resumeItemListStart
+        \resumeItem {Responsible for teaching fundamental physical concepts such as Classical Mechanics and Electromagnetism to undergraduate students.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+
+%-------------------------------------------------- PROJECTS --------------------------------------------------
+\section{\faFlask}{Reseach and Projects}
+
+  \resumeEntryStart
+   \resumeEntryTD
+      {Msc. Physics Thesis}{Jul. 2017}
+    \resumeItemListStart
+      \resumeItem {Master thesis final project titled \emph{Study of phase transitions of an Ising-type model with spin oriented dependent interaction parameter}.}
+      \resumeItem {\textbf{Technologies used}: Fortran and Gnuplot.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+   \resumeEntryTD
+      {Kerr Black Holes}{Dec. 2014}
+    \resumeItemListStart
+      \resumeItem {Work done as the final project of the course entitled \emph{Introduction to General Relativity} about Kerr Black Holes.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+  
+\resumeEntryStart
+   \resumeEntryTD
+      {ALAMBRE Project}{Nov. 2014}
+    \resumeItemListStart
+      \resumeItem {Final project done for the course \emph{Computer Simulations}. It consisted in simulating both the High Energy Cosmic Rays and the 30m radio telescope located in the Argentine Institute of Radio Astronomy \href{https://www.iar.unlp.edu.ar/}{IAR} using Monte Carlo methods with the final goal set to determine if the antenna could detect radio emission from those cascades.}
+      \resumeItem {This work was presented as a poster at the 100 Annual meeting of the \emph{Argentine Physics Association} \href{https://www.fisica.org.ar/}{AFA} from 22 to 25 of September 2015 in Villa de Merlo, San Luis, Argentina. }
+      \resumeItem {\textbf{Technologies used}: Mainly C++ and \href{https://www.r-project.org/about.html}{R}.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+  
+\resumeEntryStart
+   \resumeEntryTD
+      {Hexapod Robot}{Nov. 2009}
+    \resumeItemListStart
+      \resumeItem {This project was done with my brother during my last high school year and was presented during the annual 2009 science fair.}
+      \resumeItem {It consisted in creating the whole robot chassis and simulating its movements for each one of its 18 servomotors.}
+      \resumeItem {The project was awarded the 2nd place for best high schools projects at the National University of La Matanza \href{https://www.unlam.edu.ar/}{UNLAM}. }
+      \resumeItem {\textbf{Technologies used}: Basic.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+  
+%--------------------------------------------------HOBBIES--------------------------------------------------
+
+\section{\faGears}{Hobbies}
+ \resumeEntryStart
+  \resumeEntryS{Playing Violin} {Started learning since 2017 and I track my progress in a web page with the goal of motivate adults like me. \href{https://mattborghi.github.io/violin/}{\faGlobe}}
+  \resumeEntryS{Cycling and Swimming} {My goal is to participate in an \href{https://www.ironman.com/}{Ironman} competition in the near future.}
+ \resumeEntryEnd
+
+%-------------------------------------------------- ONLINE COURSES --------------------------------------------------
+
+\section{\faBook}{Languages}
+ \resumeEntryStart
+    \resumeEntryS {Spanish}{Native} 
+    \resumeEntryS {English}{Fluent}
+    \resumeEntryS {French}{A2}
+ \resumeEntryEnd
+
+\end{document}
