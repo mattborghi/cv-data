@@ -1,0 +1,151 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Cover Letter
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-concrete}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\newcommand{\myname}{Matias Pablo}
+\newcommand{\mysurname}{Borghi Orue}
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[circle,noedge,right]{profile}
+\name{\myname}{\mysurname}
+\position{Quantitative Analyst {\enskip\cdotp\enskip}Quantitative Researcher{\enskip\cdotp\enskip}MSc Physics}
+\address{Av Cordoba 6570, Chacatita, 1427, CABA, Buenos Aires, Argentina}
+
+\mobile{(+54) 9 11 2157-6504}
+\email{borghi.matias@gmail.com}
+\homepage{mattborghi.github.io}
+\github{mattborghi}
+\linkedin{borghimatias}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+% \quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\newcommand{\company}{RavenPack}
+
+\recipient
+  {Company Recruitment Team}
+  {\company \\ 1600 Amphitheatre Parkway\\Mountain View, CA 94043}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for Quantitative Researcher}
+% How the letter is opened
+\letteropening{To Whom It May Concern,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+% \letterenclosure[Attached]{Curriculum Vitae}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {\myname {} \mysurname~~~·~~~Cover Letter}
+  {}
+
+% Print the title with above letter informations
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+\lettersection{Introduction}
+As a deep learning, finance and data enthusiast I found myself quite thrilled to see your quantitative research opening. Having experience in several programming languages and working in the financial industry made me consider myself as a fit candidate for the job. 
+
+
+\lettersection{Why \company?}
+During my previous role at Crisil, I have been working as a quantitative researcher but given that my current employer wasn't much motivated to change their line of business, I have decided to pursue the same career path elsewhere. Along these years we formed a really good interdisciplinary collaborative team that worked flawlessly independently or in small groups in order to achieve the project goals. 
+
+In the short term, I will be working as a consultant with a tier-1 US investment bank with my current employer but I prefer that my future lay in the research area.
+Given that I am looking for a relocation opportunity in addition to the fact that I love Quantitative Research, I didn't think twice about applying for the job position.
+
+
+\lettersection{Why Me?}
+Although I am not a NLP expert, I have found myself several times having to deal with work uncertainty but I know that I have the tools to succeed. For example, during my work as a Quantitative Research I was offered to do a demo that had to be done in record-time in order to be presented in a conference and having a very basic understanding about web app development  was not an obstacle, given its successful implementation.
+
+As a person that likes to keep learning continuously I find myself doing online courses and, lately, motivated by the pandemics, attending conferences or talks of interest. Right now I am trying to take my knowledge on Microservices/Full Stack tech into AI by studying MLOps.
+
+I would enjoy having the opportunity to discuss my application with you and how I could use my skills to benefit \company.
+
+
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
