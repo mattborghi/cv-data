@@ -25,6 +25,7 @@
 \usepackage{tabularx}
 
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+
 % Header settings
 \def \fullname {Matias Borghi}
 \def \subtitle {}
@@ -61,9 +62,11 @@
 
 % Define colours
 \definecolor{primary}{HTML}{000000}
-\definecolor{secondary}{HTML}{0D47A1}
+% \definecolor{secondary}{HTML}{0D47A1}
+\definecolor{secondary}{HTML}{95A5A6}
 \definecolor{accent}{HTML}{263238}
 \definecolor{links}{HTML}{1565C0}
+% \definecolor{awesome-concrete}{HTML}{95A5A6}
 
 %------------------------------------------------------------------------------------------------------------------- 
 
@@ -194,8 +197,19 @@
 \section{\faPieChart}{Professional Experience}
 
   \resumeEntryStart
+  
+      \resumeEntryTSDL
+      {CRISIL an {\color{red}S\&P Global} Company \href{https://www.crisil.com/}{\faGlobe}}{Jun 2021 -- Present}
+      {Sr. Quantitative Analyst}{Buenos Aires, AR}
+    \resumeItemListStart
+      \resumeItem{Validation and documentation for a vendor model that uses deep learning techniques in order to price stocks/ETFs and gain insight into portfolio management investing.}
+      \resumeItem {Responsible for creating technical documentation and generating executive summary reports in \LaTeX. Creation and execution of Benchmark Analysis, Back testing, Stress Tests and Stability tests, among others.}
+ \resumeItemListEnd
+%   \resumeEntryEnd
+  
+  
     \resumeEntryTSDL
-      {CRISIL an {\color{red}S\&P Global} Company \href{https://www.crisil.com/}{\faGlobe}}{Mar 2019 -- Present}
+      {CRISIL an {\color{red}S\&P Global} Company \href{https://www.crisil.com/}{\faGlobe}}{Mar 2019 -- May 2021}
       {Quantitative Researcher}{Buenos Aires, AR}
     \resumeItemListStart
       \resumeItem{Working in a R\&D team in the development of a high-performance library designed to achieve fast and advanced quantitative finance calculations, including: Monte Carlo universal pricing engine for exotic equity products; Greeks computation via automatic differentiation; domain specific language (DSL) design and implementation for syntactically-sweetened inputs.}
@@ -280,8 +294,26 @@
   \resumeEntryTD
       {Background Tasks Queue \href{https://mattborghi.github.io/projects/Background\%20Task\%20Queues/}{\faGithub}}{Jan 2021}
     \resumeItemListStart
-      \resumeItem {Project implementing a background tasks/jobs queue with React as frontend, Python to process the requests and Julia to run the jobs communicating using RabbitMQ.}
+      \resumeItem {Project implementing a background tasks/jobs queue with React as frontend, Python (Django) to process the requests and Julia to run the jobs communicating using RabbitMQ.}
       \resumeItem{Deployed using Heroku, GitHub pages and CloudAMQP.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+  
+   \resumeEntryStart
+  \resumeEntryTD
+      {Julia Editor on the Web \href{https://mattborghi.github.io/projects/Julia\%20Editor\%20on\%20the\%20Web/}{\faGithub}}{Feb 2021}
+    \resumeItemListStart
+      \resumeItem {A minimal working project that handles Microsoft’s Monaco Editor on the web with Julia’s syntax highlighting and a dedicated Julia Language Server that allows a certain user to have full access to package documentation, suggestion and snippets, among other thigns.}
+      \resumeItem{Built using React.js, Node.js and Julia.}
+  \resumeItemListEnd
+  \resumeEntryEnd
+  
+     \resumeEntryStart
+  \resumeEntryTD
+      {Julia Terminals on the Web \href{https://mattborghi.github.io/projects/Julia\%20Terminal\%20Web/}{\faGithub}}{Mar 2021}
+    \resumeItemListStart
+      \resumeItem {A minimal working project that handles multiple pseudoterminals running Julia on React. It’s UI design is based on VSCode and Atom IDEs.}
+      \resumeItem{Built using React.js, Node.js and Julia.}
   \resumeItemListEnd
   \resumeEntryEnd
 
